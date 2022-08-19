@@ -1,0 +1,19 @@
+@import '../../../variables';
+
+.section-projects{
+  height: $height-section;
+  background-color: #4d2a09;
+  display: flex;
+  flex-direction: column;
+
+  .projects-title {
+    height: $height-title;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main-project, .secondary-projects {
+    flex-basis: calc(#{$height-section - $height-title} / 2);
+  }
+}

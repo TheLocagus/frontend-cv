@@ -1,0 +1,17 @@
+@import "../../variables";
+
+header {
+  height: $height-nav;
+  width: 100%;
+  background-color: $color-cool-darkblue;
+  display: flex;
+  color: $color-white;
+
+
+  div.logo {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -1,0 +1,50 @@
+@import "../../../variables";
+
+.main-ul {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+header nav {
+  height: 100%;
+  flex-grow: 3;
+
+  ul li {
+    position: relative;
+    flex-basis: 19%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  li:hover {
+    background-color: $color-cool-blue;
+  }
+}
+
+.dropdown {
+  display: none;
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: $color-blue-dropdown;
+  z-index: 999;
+}
+
+.projects-details_dropdown {
+  top: 0;
+  left: 100%;
+}
+
+.dropdown li {
+  line-height: 3rem;
+  font-size: 12px;
+  padding: 0 5px;
+}
+
+
+.about-me:hover .about-me_dropdown, .projects:hover .projects_dropdown, .contact:hover .contact_dropdown, .projects-details:hover .projects-details_dropdown {
+  display: block;
+}
