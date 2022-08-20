@@ -1,12 +1,13 @@
 import React from 'react';
-import {Header} from "../components/Header/Header";
+import {AboutMe} from "../components/Header/AboutMe";
 import {Sections} from "../components/Sections/Sections";
 
 export const MainPageView = () => {
+
     return (
-        <>
-            <Header/>
+        <main>
+            <AboutMe/>
             <Sections/>
-        </>
+        </main>
     )
 }
