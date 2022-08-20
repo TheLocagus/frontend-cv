@@ -4,12 +4,12 @@
   height: 100%;
   width: 100%;
 
-  .title {
-    text-align: center;
-  }
+
   .content {
     padding: 20px;
     color: $color-white;
+    height: 100%;
+    background-color: rgba(30, 30, 80, 0.8);
   }
 }
 
