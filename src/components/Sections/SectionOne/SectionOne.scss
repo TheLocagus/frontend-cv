@@ -34,6 +34,7 @@
 
 img {
   height: 100px;
+  transition: 0.3s;
 }
 .tech-title {
   transform: translateY(-50%);
@@ -51,4 +52,8 @@ img {
 
 .other {
   opacity: 0;
+}
+
+img:hover {
+  transform: scale(1.5) rotate(360deg)
 }

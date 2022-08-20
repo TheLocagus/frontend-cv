@@ -40,7 +40,7 @@ export const SectionOne = () => {
         console.log('execution')
 
 
-        if(window.scrollY > titleY - window.innerHeight + 150){
+        if(window.scrollY > titleY - window.innerHeight + 200){
             title.current.style.transform = 'translateY(0)'
             title.current.style.opacity = '1'
         } else {
@@ -48,19 +48,19 @@ export const SectionOne = () => {
             title.current.style.opacity = '0'
         }
 
-        if(window.scrollY > firstRowY - window.innerHeight + 150){
+        if(window.scrollY > firstRowY - window.innerHeight + 200){
             firstRow.current.style.transform = 'translateX(0)'
         } else {
             firstRow.current.style.transform = 'translateX(-100%)'
         }
 
-        if(window.scrollY > secondRowY - window.innerHeight + 150){
+        if(window.scrollY > secondRowY - window.innerHeight + 200){
             secondRow.current.style.transform = 'translateX(0)'
         } else {
             secondRow.current.style.transform = 'translateX(100%)'
         }
 
-        if(window.scrollY > thirdRowY - window.innerHeight + 150){
+        if(window.scrollY > thirdRowY - window.innerHeight + 200){
             thirdRow.current.style.opacity = '1'
         } else  {
             thirdRow.current.style.opacity = '0'
