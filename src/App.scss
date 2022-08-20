@@ -7,7 +7,8 @@
 }
 
 .App {
-  background-color: $color-cool-gray;
+  background: linear-gradient(90deg, rgba(24,24,55,1) 15%, rgba(3,19,80,1) 50%, rgba(24,24,55,1) 85%);
   font-family: Arial, serif;
-  height: $height-app;
+  color: white;
+  overflow-x: hidden;
 }

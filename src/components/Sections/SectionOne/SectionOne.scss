@@ -2,7 +2,6 @@
 
 .section-tech {
   height: $height-section;
-  background-color: #500505;
   display: flex;
   flex-direction: column;
   color: $color-white;
@@ -12,16 +11,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2.1rem;
+    font-size: 1.5rem;
   }
   .frontend, .backend, .other {
     flex-basis: calc(#{$height-section - $height-title} / 3);
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.5s;
 
     .tech {
-      flex-basis: calc(100vw / 3);
+      flex-basis: 15%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -32,6 +32,23 @@
 
 }
 
-.image {
+img {
+  height: 100px;
+}
+.tech-title {
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: 0.5s;
+}
 
+.frontend {
+  transform: translateX(-100%);
+}
+
+.backend {
+  transform: translateX(100%);
+}
+
+.other {
+  opacity: 0;
 }

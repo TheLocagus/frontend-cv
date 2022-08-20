@@ -1,15 +1,79 @@
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 
 import './SectionOne.scss';
 
 export const SectionOne = () => {
 
+    const title = useRef() as React.MutableRefObject<HTMLInputElement>;
+    const firstRow = useRef() as React.MutableRefObject<HTMLInputElement>;
+    const secondRow = useRef() as React.MutableRefObject<HTMLInputElement>;
+    const thirdRow = useRef() as React.MutableRefObject<HTMLInputElement>;
+
+    const [titleY, setTitleY] = useState(0);
+    const [firstRowY, setFirstRowY] = useState(0);
+    const [secondRowY, setSecondRowY] = useState(0);
+    const [thirdRowY, setThirdRowY] = useState(0);
+
+    useEffect(()=>{
+        const titleY = title.current.offsetTop;
+        const firstRowY = firstRow.current.offsetTop;
+        const secondRowY = secondRow.current.offsetTop;
+        const thirdRowY = thirdRow.current.offsetTop;
+
+        setTitleY(titleY);
+        setFirstRowY(firstRowY);
+        setSecondRowY(secondRowY);
+        setThirdRowY(thirdRowY);
+    }, [])
+
+    useEffect(() => {
+        if(firstRowY === 0){
+            return;
+        }
+        window.addEventListener('scroll', slideElements)
+    }, [firstRowY])
+
+    const slideElements = () => {
+        if(firstRowY === 0 || window.scrollY < titleY - window.innerHeight + 100 || window.scrollY > thirdRowY - 100){
+            return;
+        }
+        console.log('execution')
+
+
+        if(window.scrollY > titleY - window.innerHeight + 150){
+            title.current.style.transform = 'translateY(0)'
+            title.current.style.opacity = '1'
+        } else {
+            title.current.style.transform = 'translateY(-50%)'
+            title.current.style.opacity = '0'
+        }
+
+        if(window.scrollY > firstRowY - window.innerHeight + 150){
+            firstRow.current.style.transform = 'translateX(0)'
+        } else {
+            firstRow.current.style.transform = 'translateX(-100%)'
+        }
+
+        if(window.scrollY > secondRowY - window.innerHeight + 150){
+            secondRow.current.style.transform = 'translateX(0)'
+        } else {
+            secondRow.current.style.transform = 'translateX(100%)'
+        }
+
+        if(window.scrollY > thirdRowY - window.innerHeight + 150){
+            thirdRow.current.style.opacity = '1'
+        } else  {
+            thirdRow.current.style.opacity = '0'
+        }
+    }
+
+
     return (
         <section className='section-tech'>
-            <div className="tech-title">
+            <div className="tech-title" ref={title}>
                 <h2>Stack technologiczny</h2>
             </div>
-            <div className='frontend'>
+            <div className='frontend' ref={firstRow}>
                 <div className='tech'>
                     <div className="image"><img src={require("../../../images/html5-150px.png")} alt=""/></div>
                     <div className="name"></div>
@@ -28,7 +92,7 @@ export const SectionOne = () => {
                     <div className="name"></div>
                 </div>
             </div>
-            <div className='backend'>
+            <div className='backend' ref={secondRow}>
                 <div className='tech'>
                     <div className="image"><img src={require("../../../images/node-245-150.png")} alt=""/></div>
                     <div className="name"></div>
@@ -46,7 +110,7 @@ export const SectionOne = () => {
                     <div className="name"></div>
                 </div>
             </div>
-            <div className='other'>
+            <div className='other' ref={thirdRow}>
                 <div className='tech'>
                     <div className="image"><img src={require("../../../images/typeorm-150px.png")} alt=""/></div>
                     <div className="name"></div>
