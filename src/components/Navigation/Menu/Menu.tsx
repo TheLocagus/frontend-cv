@@ -7,32 +7,32 @@ export const Menu = () => {
     return (
         <nav className="menu-container">
             <ul className="main-ul">
-                <li className="about-me">
+                <li className="main-ul__about-me">
                     <div>O mnie \/</div>
-                    <ul className="dropdown about-me_dropdown">
+                    <ul className="dropdown main-ul__about-me_dropdown">
                         <li>O mnie</li>
                         <li>Technologie</li>
                     </ul>
                 </li>
-                <li className="projects">
+                <li className="main-ul__projects">
                     <div>Projekty \/</div>
-                    <ul className="dropdown projects_dropdown">
+                    <ul className="dropdown main-ul__projects_dropdown">
                         <li className="projects-preview">Projekty</li>
-                        <li className="projects-details">
+                        <li className="main-ul__projects-details">
                             <div>Lista projektów {`>`} </div>
-                            <ul className="dropdown projects-details_dropdown">
+                            <ul className="dropdown main-ul__projects-details_dropdown">
                                 <li>Kalkulator kalorii</li>
                                 <li>MegaK - Head Hunters</li>
                             </ul>
                         </li>
                     </ul>
                 </li>
-                <li className="github">
+                <li className="main-ul__github">
                     <div>Github</div>
                 </li>
-                <li className="contact">
+                <li className="main-ul__contact">
                     <div>Kontakt \/</div>
-                    <ul className="dropdown contact_dropdown">
+                    <ul className="dropdown main-ul__contact_dropdown">
                         <li>Linkedin</li>
                         <li>Messenger</li>
                         <li>Telefon</li>

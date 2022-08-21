@@ -33,7 +33,7 @@ header nav {
   z-index: 999;
 }
 
-.projects-details_dropdown {
+.main-ul__projects-details_dropdown {
   top: 0;
   left: 100%;
 }
@@ -45,6 +45,6 @@ header nav {
 }
 
 
-.about-me:hover .about-me_dropdown, .projects:hover .projects_dropdown, .contact:hover .contact_dropdown, .projects-details:hover .projects-details_dropdown {
+.main-ul__about-me:hover .main-ul__about-me_dropdown, .main-ul__projects:hover .main-ul__projects_dropdown, .main-ul__contact:hover .main-ul__contact_dropdown, .main-ul__projects-details:hover .main-ul__projects-details_dropdown {
   display: block;
 }

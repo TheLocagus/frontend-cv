@@ -1,19 +1,61 @@
 @import '../../../variables';
 
-.section-projects{
-  height: $height-section;
-  background-color: #4d2a09;
+.section-projects {
   display: flex;
   flex-direction: column;
+  margin-bottom: 10px;
 
   .projects-title {
+    margin: 40px 0;
     height: $height-title;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1.5rem;
+  h2 {
+    padding: 0 5px 10px;
+    border-bottom: 2px solid orange;
   }
+  }
+  .project {
+    display: flex;
+    justify-content: center;
 
-  .main-project, .secondary-projects {
-    flex-basis: calc(#{$height-section - $height-title} / 2);
+    h3 {
+      flex-basis: 15%;
+      letter-spacing: 1px;
+    }
+
+    &__details {
+      flex-basis: 50%;
+      font-size: 18px;
+      line-height: 34px;
+      white-space: pre-line;
+      text-align: justify;
+
+      &__tech {
+        margin-top: 20px;
+      }
+    }
+
+    &__urls {
+      margin-left: 5px;
+      flex-basis: 15%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      a {
+        flex-basis: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-decoration: none;
+        font-style: italic;
+        font-size: 16px;
+        text-transform: uppercase;
+      }
+    }
   }
 }
