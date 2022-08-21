@@ -3,4 +3,8 @@
 .footer {
   height: $height-footer;
   background-color: $color-black;
+  color: #aaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
