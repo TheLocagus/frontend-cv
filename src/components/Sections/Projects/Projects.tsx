@@ -1,14 +1,22 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 
 import './Projects.scss'
 import {Separator} from "../../common/Separator/Separator";
 import {Project} from "../../common/Project/Project";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../../store";
+import {setProjectsY} from "../../../actions/cvData";
 
 export const Projects = () => {
 
   const {projects} = useSelector((store: RootState) => store.cvData);
+  const dispatch = useDispatch()
+  const projectsRef = useRef() as React.MutableRefObject<HTMLInputElement>;
+
+  useEffect(()=> {
+    const projectsRefY = projectsRef.current.offsetTop;
+    dispatch(setProjectsY(projectsRefY));
+  }, [])
 
   const generateProjectsView = () => projects
     .map((project, i, array) => {
@@ -41,7 +49,7 @@ export const Projects = () => {
 
   return (
     <>
-      <section className="section-projects">
+      <section className="section-projects" ref={projectsRef}>
         <div className="projects-title"><h2>Moje projekty</h2></div>
         {generateProjectsView()}
       </section>
