@@ -2,7 +2,6 @@ import React, {useRef} from "react";
 import {Route, Routes} from "react-router-dom";
 import './App.scss';
 import {Navigation} from "./components/Navigation/Navigation";
-import {AboutMe} from "./components/Header/AboutMe";
 import {Footer} from "./components/Footer/Footer";
 import {MainPageView} from "./views/MainPageView";
 import {ErrorView} from "./views/ErrorView/ErrorView";

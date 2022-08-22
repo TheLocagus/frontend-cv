@@ -1,8 +1,8 @@
 import React, {useEffect, useRef, useState} from 'react';
 
-import './SectionOne.scss';
+import './Tech.scss';
 
-export const SectionOne = () => {
+export const Tech = () => {
 
     const title = useRef() as React.MutableRefObject<HTMLInputElement>;
     const firstRow = useRef() as React.MutableRefObject<HTMLInputElement>;
