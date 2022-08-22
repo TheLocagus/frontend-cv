@@ -4,11 +4,13 @@ import {CvDataAction} from "../action-types/cvData";
 export interface CvDataState {
   projects: ProjectInterface[];
   contacts: ContactInterface[];
+  projectsY: number;
 }
 
 const initialState: CvDataState = {
   projects: [],
   contacts: [],
+  projectsY: 0,
 }
 
 interface SetProjects {
@@ -21,7 +23,12 @@ interface SetContacts {
   payload: ContactInterface[],
 }
 
-type Action = SetProjects | SetContacts;
+interface SetProjectsY {
+  type: CvDataAction.SET_PROJECTS_Y,
+  payload: number,
+}
+
+type Action = SetProjects | SetContacts | SetProjectsY;
 
 export default (state: CvDataState = initialState, action: Action) => {
   switch(action.type){
@@ -35,6 +42,12 @@ export default (state: CvDataState = initialState, action: Action) => {
       return {
         ...state,
         contacts: action.payload
+      }
+    }
+    case CvDataAction.SET_PROJECTS_Y: {
+      return {
+        ...state,
+        projectsY: action.payload
       }
     }
     default: return state;

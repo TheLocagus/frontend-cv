@@ -29,6 +29,10 @@ export const ContactField = ({imgName, type, value, url}: Props) => {
     notify();
   }
 
+  const redirectTo = (value: string) => {
+    window.location.href = value;
+  }
+
   return (
     <div className="contact__details__panel">
       <div className='contact__details__panel__icon'>
@@ -36,8 +40,8 @@ export const ContactField = ({imgName, type, value, url}: Props) => {
       </div>
       <div className='contact__details__panel__data'>
         {
-          type === 'a'
-            ? <a href={url}>{value}</a>
+          type === 'redirect'
+            ? <button onClick={() => redirectTo(url)}>{value}</button>
             : (<>
               <button onClick={() => copyText(value)}>{value}</button>
               <ToastContainer

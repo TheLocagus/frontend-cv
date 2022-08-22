@@ -10,3 +10,8 @@ export const setContacts = (contacts: ContactInterface[]) => ({
   type: CvDataAction.SET_CONTACTS,
   payload: contacts,
 })
+
+export const setProjectsY = (projectsY: number) => ({
+  type: CvDataAction.SET_PROJECTS_Y,
+  payload: projectsY,
+})

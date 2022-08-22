@@ -1,8 +1,18 @@
 import React from 'react';
 
 import './Menu.scss';
+import {useSelector} from "react-redux";
+import {RootState} from "../../../store";
 
 export const Menu = () => {
+    const {projectsY} = useSelector((store: RootState) => store.cvData)
+    const slideToElement = () => {
+        window.scrollTo({
+            top: projectsY,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }
 
     return (
         <nav className="menu-container">
@@ -14,18 +24,8 @@ export const Menu = () => {
                         <li>Technologie</li>
                     </ul>
                 </li>
-                <li className="main-ul__projects">
-                    <div>Projekty \/</div>
-                    <ul className="dropdown main-ul__projects_dropdown">
-                        <li className="projects-preview">Projekty</li>
-                        <li className="main-ul__projects-details">
-                            <div>Lista projektów {`>`} </div>
-                            <ul className="dropdown main-ul__projects-details_dropdown">
-                                <li>Kalkulator kalorii</li>
-                                <li>MegaK - Head Hunters</li>
-                            </ul>
-                        </li>
-                    </ul>
+                <li onClick={() => slideToElement()} className="main-ul__projects">
+                    Projekty
                 </li>
                 <li className="main-ul__github">
                     <div>Github</div>
