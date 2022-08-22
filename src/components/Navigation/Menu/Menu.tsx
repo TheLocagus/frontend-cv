@@ -31,12 +31,7 @@ export const Menu = () => {
                     <div>Github</div>
                 </li>
                 <li className="main-ul__contact">
-                    <div>Kontakt \/</div>
-                    <ul className="dropdown main-ul__contact_dropdown">
-                        <li>Linkedin</li>
-                        <li>Messenger</li>
-                        <li>Telefon</li>
-                    </ul>
+                    <div>Kontakt</div>
                 </li>
             </ul>
         </nav>
