@@ -5,6 +5,7 @@ import {Navigation} from "./components/Navigation/Navigation";
 import {AboutMe} from "./components/Header/AboutMe";
 import {Footer} from "./components/Footer/Footer";
 import {MainPageView} from "./views/MainPageView";
+import {ErrorView} from "./views/ErrorView/ErrorView";
 
 export const App = () => {
 
@@ -21,6 +22,7 @@ export const App = () => {
             <Navigation/>
             <Routes>
                 <Route path='/' element={<MainPageView/>}/>
+                <Route path='/error' element={<ErrorView/>}/>
             </Routes>
             <Footer/>
         </div>

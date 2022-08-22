@@ -1,5 +1,6 @@
 import React from 'react';
 
+import './Project.scss';
 interface Props {
   id: string | number | undefined,
   title: string;
