@@ -1,12 +1,15 @@
 @import "../../../variables";
+.section-about-me {
+  height: $height-section;
+  //background-color: #123;
+  position: relative;
+}
 
 .banner {
   height: 100%;
   width: 100%;
 
-
   .content {
-
     padding: 20px 40px 20px 20px;
     color: $color-white;
     height: 100%;
@@ -40,6 +43,7 @@
       font-size: 30px;
       opacity: 0;
       animation: showing .9s linear 3s forwards;
+      letter-spacing: 1px;
     }
 
     .third-part, .fourth-part {
@@ -51,6 +55,8 @@
       white-space: pre-wrap;
       opacity: 0;
       animation: showing .9s linear 3s forwards;
+      line-height: 30px;
+      letter-spacing: 1px;
     }
   }
 

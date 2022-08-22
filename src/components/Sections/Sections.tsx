@@ -1,14 +1,16 @@
 import React from 'react';
-import {SectionOne} from "./SectionOne/SectionOne";
-import {SectionTwo} from "./SectionTwo/SectionTwo";
+import {Tech} from "./Tech/Tech";
+import {Projects} from "./Projects/Projects";
 import {Contact} from "./Contact/Contact";
+import {Banner} from "./Banner/Banner";
 
 export const Sections = () => {
 
   return (
     <>
-      <SectionOne/>
-      <SectionTwo/>
+      <Banner/>
+      <Tech/>
+      <Projects/>
       <Contact/>
     </>
   )

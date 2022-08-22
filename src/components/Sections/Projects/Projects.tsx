@@ -1,15 +1,14 @@
 import React from 'react';
 
-import './SectionTwo.scss'
+import './Projects.scss'
 import {Separator} from "../../common/Separator/Separator";
 import {Project} from "../../common/Project/Project";
 import {useSelector} from "react-redux";
 import {RootState} from "../../../store";
 
-export const SectionTwo = () => {
+export const Projects = () => {
 
-  const {projects} = useSelector((store: RootState) => store.cvData)
-  console.log(projects)
+  const {projects} = useSelector((store: RootState) => store.cvData);
 
   const generateProjectsView = () => projects
     .map((project, i, array) => {
