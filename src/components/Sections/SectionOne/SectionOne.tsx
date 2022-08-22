@@ -76,56 +76,43 @@ export const SectionOne = () => {
             <div className='frontend' ref={firstRow}>
                 <div className='tech'>
                     <div className="image"><img className='tech-icon' src={"/images/html5-150px.png"} alt=""/></div>
-                    <div className="name"></div>
                 </div>
                 <div className='tech'>
                     <div className="image"><img className='tech-icon' src={"/images/css3-150px.png"} alt=""/></div>
-                    <div className="name"></div>
                 </div>
                 <div className='tech'>
                     <div className="image"><img className='tech-icon' src={"/images/js-150px.png"} alt=""/></div>
-                    <div className="name"></div>
                 </div>
                 <div className='tech'>
                     <div className="image"><img className='tech-icon' src={"/images/react-150px.png"} alt=""/></div>
-
-                    <div className="name"></div>
                 </div>
             </div>
             <div className='backend' ref={secondRow}>
                 <div className='tech'>
                     <div className="image"><img className='tech-icon' src={"/images/node-245-150.png"} alt=""/></div>
-                    <div className="name"></div>
                 </div>
                 <div className='tech'>
                     <div className="image"><img className='tech-icon' src={"/images/express-150px.png"} alt=""/></div>
-                    <div className="name"></div>
                 </div>
                 <div className='tech'>
                     <div className="image"><img className='tech-icon' src={"/images/nest-150px.png"} alt=""/></div>
-                    <div className="name"></div>
                 </div>
                 <div className='tech'>
                     <div className="image"><img className='tech-icon' src={"/images/ts-150px.png"} alt=""/></div>
-                    <div className="name"></div>
                 </div>
             </div>
             <div className='other' ref={thirdRow}>
                 <div className='tech'>
                     <div className="image"><img className='tech-icon' src={"/images/typeorm-150px.png"} alt=""/></div>
-                    <div className="name"></div>
                 </div>
                 <div className='tech'>
                     <div className="image"><img className='tech-icon' src={"/images/mysql-150px.png"} alt=""/></div>
-                    <div className="name"></div>
                 </div>
                 <div className='tech'>
                     <div className="image"><img className='tech-icon' src={"/images/git-150px.png"} alt=""/></div>
-                    <div className="name"></div>
                 </div>
                 <div className='tech'>
                     <div className="image"><img className='tech-icon' src={"/images/scrum-150px.png"} alt=""/></div>
-                    <div className="name"></div>
                 </div>
             </div>
         </section>

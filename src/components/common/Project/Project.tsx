@@ -1,6 +1,7 @@
 import React from 'react';
 
 interface Props {
+  id: string | number | undefined,
   title: string;
   describe: string;
   tech: string;
@@ -23,9 +24,9 @@ export const Project = ({title, describe, tech, frontUrl, demoUrl, backUrl}: Pro
         </p>
       </div>
       <div className="project__urls">
-        <a className="project__urls__github-front" href={frontUrl}> {'>'} Github Frontend </a>
-        <a className="project__urls__github-back" href={backUrl}> {'>'} Github Backend </a>
-        <a className="project__urls__demo" href={demoUrl}> {'>'} Demo </a>
+        <a className="project__urls__github-front" href={frontUrl} target="_blank"> {'>'} Github Frontend </a>
+        <a className="project__urls__github-back" href={backUrl} target="_blank"> {'>'} Github Backend </a>
+        <a className="project__urls__demo" href={demoUrl} target="_blank"> {'>'} Demo </a>
       </div>
     </div>
   )
