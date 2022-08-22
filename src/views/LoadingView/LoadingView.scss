@@ -1,0 +1,14 @@
+@import "../../variables";
+
+.loading-view {
+  height: calc(100vh - #{$height-nav} - #{$height-footer});
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1, h2 {
+    flex-basis: 15%;
+  }
+}

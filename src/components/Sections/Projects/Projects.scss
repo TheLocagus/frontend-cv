@@ -1,0 +1,22 @@
+@import '../../../variables';
+
+.section-projects {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+
+  .projects-title {
+    margin: 40px 0;
+    height: $height-title;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+
+    h2 {
+      padding: 0 5px 10px;
+      border-bottom: 2px solid orange;
+    }
+  }
+
+}

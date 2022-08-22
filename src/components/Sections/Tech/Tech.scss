@@ -1,0 +1,65 @@
+@import '../../../variables';
+
+.section-tech {
+  height: $height-section;
+  display: flex;
+  flex-direction: column;
+  color: $color-white;
+
+  .tech-title {
+    height: $height-title;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: 0.5s;
+
+    h2 {
+      padding: 0 5px 10px;
+      border-bottom: 2px solid orange;
+    }
+  }
+  .frontend, .backend, .other {
+    flex-basis: calc(#{$height-section - $height-title} / 3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+
+    .tech {
+      flex-basis: 15%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+
+    }
+  }
+
+}
+
+.tech-icon {
+  height: 100px;
+  transition: 0.3s;
+}
+.tech-title {
+
+}
+
+.frontend {
+  transform: translateX(-100%);
+}
+
+.backend {
+  transform: translateX(100%);
+}
+
+.other {
+  opacity: 0;
+}
+
+.tech-icon:hover {
+  transform: scale(1.5) rotate(360deg)
+}

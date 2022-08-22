@@ -1,0 +1,14 @@
+@import 'variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  background: linear-gradient(90deg, rgba(24,24,55,1) 15%, rgba(3,19,80,1) 50%, rgba(24,24,55,1) 85%);
+  font-family: Arial, serif;
+  color: white;
+  overflow-x: hidden;
+}

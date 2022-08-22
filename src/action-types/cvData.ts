@@ -1,0 +1,5 @@
+export enum CvDataAction {
+  SET_PROJECTS = "SET_PROJECTS",
+  SET_CONTACTS = "SET_CONTACTS",
+  SET_PROJECTS_Y = "SET_PROJECTS_Y",
+}
