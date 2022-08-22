@@ -1,6 +1,7 @@
 import React from 'react';
 import { DynamicButtonEnum } from 'types';
 
+import './ContactField.scss';
 interface Props {
   imgName: string;
   type: DynamicButtonEnum;
