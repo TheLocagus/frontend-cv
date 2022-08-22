@@ -5,6 +5,7 @@ import {DataResponseType} from 'types';
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../store";
 import {setContacts, setProjects} from "../actions/cvData";
+import {LoadingView} from "./LoadingView/LoadingView";
 
 export const MainPageView = () => {
   const {projects, contacts} = useSelector((store: RootState) => store.cvData)
@@ -23,6 +24,10 @@ export const MainPageView = () => {
         }
       })()
     }, [])
+
+  if (projects.length === 0 && contacts.length === 0){
+    return <LoadingView/>
+  }
 
     return (
         <main>

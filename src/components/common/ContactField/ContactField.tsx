@@ -1,23 +1,31 @@
 import React from 'react';
+import { DynamicButtonEnum } from 'types';
 
 interface Props {
-  imageName: string;
-  type: 'a' | 'button';
+  imgName: string;
+  type: DynamicButtonEnum;
   value: string;
+  url: string;
+  id: string;
 }
 
-export const ContactField = ({imageName, type, value}: Props) => {
+export const ContactField = ({imgName, type, value, url}: Props) => {
+
+  const copyText = (value: string) => {
+    navigator.clipboard.writeText(value)
+    alert("Skopiowano")
+  }
 
   return (
     <div className="contact__details__panel">
       <div className='contact__details__panel__icon'>
-        <img src={`/images/contact-icons/${imageName}`} alt=""/>
+        <img src={`/images/contact-icons/${imgName}`} alt=""/>
       </div>
       <div className='contact__details__panel__data'>
         {
           type === 'a'
-            ? <a href="/">{value}</a>
-            : <button>{value}</button>
+            ? <a href={url}>{value}</a>
+            : <button onClick={() => copyText(value)}>{value}</button>
         }
       </div>
     </div>
