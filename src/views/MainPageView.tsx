@@ -11,7 +11,8 @@ export const MainPageView = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     (async () => {
-      const res = await fetch('http://localhost:3001/api');
+      const res = await fetch('https://bkolsutjs-cv.networkmanager.pl/api');
+      // const res = await fetch('http://bkolsutjs-cv.networkmanager.pl/api');
       const data: DataResponseType = await res.json();
       console.log(data)
       if (data.success) {
@@ -19,7 +20,8 @@ export const MainPageView = () => {
         dispatch(setContacts(data.contacts.contacts))
 
       } else {
-        window.location.href = 'http://localhost:3000/error'
+        // window.location.href = 'http://localhost:3000/error'
+        window.location.href = 'https://bkolsutjs-cv.networkmanager.pl/error'
       }
     })()
   }, [])
