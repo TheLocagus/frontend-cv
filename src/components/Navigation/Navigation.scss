@@ -14,3 +14,9 @@ header {
     align-items: center;
   }
 }
+
+@media (max-width: 651px) {
+  header {
+    display: none;
+  }
+}

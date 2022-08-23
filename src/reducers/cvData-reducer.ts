@@ -5,12 +5,16 @@ export interface CvDataState {
   projects: ProjectInterface[];
   contacts: ContactInterface[];
   projectsY: number;
+  techY: number;
+  contactY: number;
 }
 
 const initialState: CvDataState = {
   projects: [],
   contacts: [],
   projectsY: 0,
+  techY: 0,
+  contactY: 0,
 }
 
 interface SetProjects {
@@ -27,8 +31,16 @@ interface SetProjectsY {
   type: CvDataAction.SET_PROJECTS_Y,
   payload: number,
 }
+interface SetTechY {
+  type: CvDataAction.SET_TECH_Y,
+  payload: number,
+}
+interface SetContactY {
+  type: CvDataAction.SET_CONTACT_Y,
+  payload: number,
+}
 
-type Action = SetProjects | SetContacts | SetProjectsY;
+type Action = SetProjects | SetContacts | SetProjectsY | SetTechY | SetContactY;
 
 export default (state: CvDataState = initialState, action: Action) => {
   switch(action.type){
@@ -48,6 +60,18 @@ export default (state: CvDataState = initialState, action: Action) => {
       return {
         ...state,
         projectsY: action.payload
+      }
+    }
+    case CvDataAction.SET_TECH_Y: {
+      return {
+        ...state,
+        techY: action.payload
+      }
+    }
+    case CvDataAction.SET_CONTACT_Y: {
+      return {
+        ...state,
+        contactY: action.payload
       }
     }
     default: return state;

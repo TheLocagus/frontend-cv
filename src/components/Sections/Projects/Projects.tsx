@@ -10,7 +10,7 @@ import {setProjectsY} from "../../../actions/cvData";
 export const Projects = () => {
 
   const {projects} = useSelector((store: RootState) => store.cvData);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const projectsRef = useRef() as React.MutableRefObject<HTMLInputElement>;
 
   useEffect(()=> {

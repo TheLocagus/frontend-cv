@@ -63,3 +63,23 @@
 .tech-icon:hover {
   transform: scale(1.5) rotate(360deg)
 }
+
+@media (max-width: 651px) {
+  .section-tech {
+    height: 80vh;
+    .tech-title {
+      font-size: 1.2rem;
+      h2 {}
+    }
+    .frontend, .backend, .other {
+      justify-content: space-around;
+    }
+  }
+  .tech-icon {
+    height: 60px;
+  }
+}
+
+@media (max-width: 651px){
+
+}

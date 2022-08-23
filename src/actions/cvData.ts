@@ -15,3 +15,13 @@ export const setProjectsY = (projectsY: number) => ({
   type: CvDataAction.SET_PROJECTS_Y,
   payload: projectsY,
 })
+
+export const setTechY = (techY: number) => ({
+  type: CvDataAction.SET_TECH_Y,
+  payload: techY,
+})
+
+export const setContactY = (contactY: number) => ({
+  type: CvDataAction.SET_CONTACT_Y,
+  payload: contactY,
+})

@@ -3,12 +3,13 @@ import React from 'react';
 import './Menu.scss';
 import {useSelector} from "react-redux";
 import {RootState} from "../../../store";
+import {redirectTo} from "../../../utils/redirectTo";
 
 export const Menu = () => {
-    const {projectsY} = useSelector((store: RootState) => store.cvData)
-    const slideToElement = () => {
+    const {projectsY, techY, contactY} = useSelector((store: RootState) => store.cvData)
+    const slideToElement = (elementY: number) => {
         window.scrollTo({
-            top: projectsY,
+            top: elementY,
             left: 0,
             behavior: 'smooth'
         });
@@ -17,20 +18,20 @@ export const Menu = () => {
     return (
         <nav className="menu-container">
             <ul className="main-ul">
-                <li className="main-ul__about-me">
-                    <div>O mnie \/</div>
-                    <ul className="dropdown main-ul__about-me_dropdown">
-                        <li>O mnie</li>
-                        <li>Technologie</li>
-                    </ul>
+                <li onClick={() => slideToElement(techY)} className="main-ul__stack">
+                    <div>Stack</div>
+                    {/*<ul className="dropdown main-ul__about-me_dropdown">*/}
+                    {/*    <li>O mnie</li>*/}
+                    {/*    <li>Technologie</li>*/}
+                    {/*</ul>*/}
                 </li>
-                <li onClick={() => slideToElement()} className="main-ul__projects">
+                <li onClick={() => slideToElement(projectsY)} className="main-ul__projects">
                     Projekty
                 </li>
-                <li className="main-ul__github">
+                <li onClick={() => redirectTo('https://github.com/TheLocagus')} className="main-ul__github">
                     <div>Github</div>
                 </li>
-                <li className="main-ul__contact">
+                <li onClick={() => slideToElement(contactY)} className="main-ul__contact">
                     <div>Kontakt</div>
                 </li>
             </ul>

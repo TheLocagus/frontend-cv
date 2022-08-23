@@ -8,3 +8,9 @@
   justify-content: center;
   align-items: center;
 }
+
+@media (max-width: 651px){
+  .footer {
+    font-size: 12px;
+  }
+}

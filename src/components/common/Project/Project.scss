@@ -39,3 +39,44 @@
     }
   }
 }
+
+.orange {
+  color: orange;
+  padding-right: 5px;
+}
+
+
+@media (max-width: 651px){
+  .project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h3 {
+      text-align: center;
+      margin: 0 0 10px 0;
+      letter-spacing: 1px;
+    }
+
+    &__details {
+      font-size: 14px;
+      line-height: 30px;
+      margin: 0 30px;
+
+      &__tech {
+        margin-top: 20px;
+      }
+    }
+
+    &__urls {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+
+      a {
+        font-size: 10px;
+      }
+    }
+  }
+}

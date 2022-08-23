@@ -1,18 +1,30 @@
 import React, {useEffect, useRef, useState} from 'react';
 
 import './Tech.scss';
+import {useDispatch} from "react-redux";
+import {setProjectsY, setTechY} from "../../../actions/cvData";
 
 export const Tech = () => {
+    const dispatch = useDispatch();
 
     const title = useRef() as React.MutableRefObject<HTMLInputElement>;
     const firstRow = useRef() as React.MutableRefObject<HTMLInputElement>;
     const secondRow = useRef() as React.MutableRefObject<HTMLInputElement>;
     const thirdRow = useRef() as React.MutableRefObject<HTMLInputElement>;
 
+    const techRef = useRef() as React.MutableRefObject<HTMLInputElement>;
+
+
+
     const [titleY, setTitleY] = useState(0);
     const [firstRowY, setFirstRowY] = useState(0);
     const [secondRowY, setSecondRowY] = useState(0);
     const [thirdRowY, setThirdRowY] = useState(0);
+
+    useEffect(()=> {
+        const techRefY = techRef.current.offsetTop;
+        dispatch(setTechY(techRefY));
+    }, [])
 
     useEffect(()=>{
         const titleY = title.current.offsetTop;
@@ -69,7 +81,7 @@ export const Tech = () => {
 
 
     return (
-        <section className='section-tech'>
+        <section className='section-tech' ref={techRef}>
             <div className="tech-title" ref={title}>
                 <h2>Stack technologiczny</h2>
             </div>
