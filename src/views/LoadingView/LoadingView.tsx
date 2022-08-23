@@ -6,7 +6,9 @@ export const LoadingView = () => {
   return (
     <div className='loading-view'>
       <h1>Trwa ładowanie</h1>
-      <h2>Proszę czekać <span className='loading-view__span'></span></h2>
+      <div className="spinner-border m-5" role="status">
+        <span className="sr-only">Loading...</span>
+      </div>
     </div>
   )
 }

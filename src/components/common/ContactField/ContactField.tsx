@@ -40,9 +40,11 @@ export const ContactField = ({imgName, type, value, url}: Props) => {
       <div className='contact__details__panel__data'>
         {
           type === 'redirect'
-            ? <button onClick={() => redirectTo(url)}>{value}</button>
+            ? <>
+              <span className='orange'>{`>`}</span><button onClick={() => redirectTo(url)}>{value}</button>
+            </>
             : (<>
-              <button onClick={() => copyText(value)}>{value}</button>
+              <span className='orange'>{`>`}</span><button onClick={() => copyText(value)}>{value}</button>
               <ToastContainer
                 position="top-right"
                 autoClose={3000}
