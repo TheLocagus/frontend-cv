@@ -48,3 +48,21 @@
     button {}
   }
 }
+
+@media(max-height: 401px) and (orientation: landscape){
+  .contact__details__panel {
+    flex-basis: 23%;
+    margin-top: 20px;
+    &__icon {
+      img {
+        height: 80px;
+      }
+    }
+    &__data {
+      text-align: center;
+      margin: 0;
+    }
+    a {}
+    button {}
+  }
+}

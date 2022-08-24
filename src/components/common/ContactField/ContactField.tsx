@@ -45,17 +45,7 @@ export const ContactField = ({imgName, type, value, url}: Props) => {
             </>
             : (<>
               <span className='orange'>{`>`}</span><button onClick={() => copyText(value)}>{value}</button>
-              <ToastContainer
-                position="top-right"
-                autoClose={3000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-              /></>)
+              </>)
         }
       </div>
     </div>

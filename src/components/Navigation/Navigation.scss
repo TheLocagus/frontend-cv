@@ -12,10 +12,20 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+
+  p {
+    margin: 0;
+  }
   }
 }
 
 @media (max-width: 651px) {
+  header {
+    display: none;
+  }
+}
+
+@media (max-height: 401px) and (orientation: landscape){
   header {
     display: none;
   }

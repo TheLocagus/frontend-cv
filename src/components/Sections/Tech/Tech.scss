@@ -80,6 +80,22 @@
   }
 }
 
-@media (max-width: 651px){
-
+@media (max-height: 401px) and (orientation: landscape){
+  .section-tech {
+    height: 100vh;
+    .tech-title {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      h2 {}
+    }
+    .frontend, .backend, .other {
+      //justify-content: space-around;
+      .tech {
+        flex-basis: 18%;
+      }
+    }
+  }
+  .tech-icon {
+    height: 70px;
+  }
 }

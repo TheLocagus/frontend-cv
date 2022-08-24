@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../../store";
 import {ContactField} from "../../common/ContactField/ContactField";
 import {setContactY, setProjectsY} from "../../../actions/cvData";
+import {ToastContainer} from "react-toastify";
 
 export const Contact = () => {
 
@@ -25,6 +26,17 @@ export const Contact = () => {
       <div className="contact__details">
         {generateContactPanels()}
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </section>
   )
 }

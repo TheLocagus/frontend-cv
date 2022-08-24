@@ -102,6 +102,26 @@
       }
     }
   }
-
-
 }
+
+@media (max-height: 401px) and (orientation: landscape){
+  .banner {
+    .content {
+      .first-part {
+        flex-basis: 15%;
+        font-size: 30px;
+      }
+      .second-part {
+        font-size: 24px;
+      }
+
+      .third-part, .fourth-part {
+        font-size: 16px;
+        text-align: right;
+        margin: 10px 0;
+      }
+    }
+  }
+}
+
+
