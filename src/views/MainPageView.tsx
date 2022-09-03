@@ -1,34 +1,21 @@
-import React, {useEffect} from 'react';
-import {Sections} from "../components/Sections/Sections";
-import {DataResponseType} from 'types';
-import {useDispatch, useSelector} from "react-redux";
-import {RootState} from "../store";
-import {setContacts, setProjects} from "../actions/cvData";
-import {LoadingView} from "./LoadingView/LoadingView";
+import React from 'react';
+import {useParams} from "react-router-dom";
+import {MainPage} from "../components/common/MainPage/MainPage";
+import {useDispatch} from "react-redux";
+import {setLanguage} from "../actions/cvData";
+import { LanguageEnum } from 'types';
 
 export const MainPageView = () => {
-  const {projects, contacts} = useSelector((store: RootState) => store.cvData)
   const dispatch = useDispatch();
-  useEffect(() => {
-    (async () => {
-      // const res = await fetch('https://bkolsutjs-cv.networkmanager.pl/api');
-      const res = await fetch('http://localhost:3001/api');
-      const data: DataResponseType = await res.json();
-      if (data.success) {
-        dispatch(setProjects(data.projects.projects))
-        dispatch(setContacts(data.contacts.contacts))
-      } else {
-        window.location.href = 'http://localhost:3000/error'
-        // window.location.href = 'https://bkolsutjs-cv.networkmanager.pl/error'
-      }
-    })()
-  }, [])
+  const param = useParams()
+  const {lan} = param
 
-  if (projects.length === 0 && contacts.length === 0) {
-    return <LoadingView/>
+  if (lan === undefined || (lan !== LanguageEnum.english && lan !== LanguageEnum.polish)){
+    dispatch(setLanguage(LanguageEnum.english))
+  } else {
+    dispatch(setLanguage(lan))
   }
 
-  return (
-    <Sections/>
-  )
+  return <MainPage/>
 }
+

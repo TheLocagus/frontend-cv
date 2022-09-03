@@ -6,7 +6,7 @@ import {RootState} from "../../../store";
 import {redirectTo} from "../../../utils/redirectTo";
 
 export const Menu = () => {
-    const {projectsY, techY, contactY} = useSelector((store: RootState) => store.cvData)
+    const {projectsY, techY, contactY, language} = useSelector((store: RootState) => store.cvData)
     const slideToElement = (elementY: number) => {
         window.scrollTo({
             top: elementY,
@@ -26,13 +26,19 @@ export const Menu = () => {
                     {/*</ul>*/}
                 </li>
                 <li onClick={() => slideToElement(projectsY)} className="main-ul__projects">
-                    Projekty
+                    {
+                        language === 'eng' ? 'Projects' : 'Projekty'
+                    }
                 </li>
                 <li onClick={() => redirectTo('https://github.com/TheLocagus')} className="main-ul__github">
                     <div>Github</div>
                 </li>
                 <li onClick={() => slideToElement(contactY)} className="main-ul__contact">
-                    <div>Kontakt</div>
+                    <div>
+                        {
+                            language === 'eng' ? 'Contact' : 'Kontakt'
+                        }
+                    </div>
                 </li>
             </ul>
         </nav>

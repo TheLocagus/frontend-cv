@@ -16,12 +16,12 @@ export const Contact = () => {
     const contactsRefY = contactsRef.current.offsetTop;
     dispatch(setContactY(contactsRefY));
   }, [])
-  const generateContactPanels = () => contacts.map(contact => <ContactField value={contact.value} url={contact.url} imgName={contact.imgName} type={contact.type} id={contact.id} key={contact.id}/>)
+  const generateContactPanels = () => contacts.contacts.map(contact => <ContactField value={contact.value} url={contact.url} imgName={contact.imgName} type={contact.type} id={contact.id} key={contact.id}/>)
 
   return (
     <section className='contact' ref={contactsRef}>
       <div className="contact__title">
-        <h2>Kontakt</h2>
+        <h2>{contacts.title}</h2>
       </div>
       <div className="contact__details">
         {generateContactPanels()}

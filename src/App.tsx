@@ -16,16 +16,17 @@ export const App = () => {
     // console.log("Wysokość ekranu", window.innerHeight)
     // console.log("Góra ekranu ", window.scrollY)
   }
-    return (
-        <div className="App" ref={appRef} onClick={showY}>
-            <Navigation/>
-            <Routes>
-                <Route path='/' element={<MainPageView/>}/>
-                <Route path='/error' element={<ErrorView/>}/>
-            </Routes>
-            <Footer/>
-        </div>
-    );
+  return (
+    <div className="App" ref={appRef} onClick={showY}>
+      <Navigation/>
+      <Routes>
+        <Route path='/' element={<MainPageView/>}/>
+        <Route path='/:lan' element={<MainPageView/>}/>
+        <Route path='/error' element={<ErrorView/>}/>
+      </Routes>
+      <Footer/>
+    </div>
+  );
 }
 
 

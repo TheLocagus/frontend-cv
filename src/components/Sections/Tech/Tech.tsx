@@ -1,10 +1,13 @@
 import React, {useEffect, useRef, useState} from 'react';
 
 import './Tech.scss';
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {setProjectsY, setTechY} from "../../../actions/cvData";
+import {RootState} from "../../../store";
 
 export const Tech = () => {
+    const {techTitle} = useSelector((store: RootState) => store.cvData)
+
     const dispatch = useDispatch();
 
     const title = useRef() as React.MutableRefObject<HTMLInputElement>;
@@ -83,7 +86,7 @@ export const Tech = () => {
     return (
         <section className='section-tech' ref={techRef}>
             <div className="tech-title" ref={title}>
-                <h2>Stack technologiczny</h2>
+                <h2>{techTitle}</h2>
             </div>
             <div className='frontend' ref={firstRow}>
                 <div className='tech'>
