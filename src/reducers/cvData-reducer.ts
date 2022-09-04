@@ -1,10 +1,9 @@
-import {BannerInterface, ContactInterface, ContactResponseInterface, LanguageEnum, MenuInterface, ProjectInterface, ProjectResponseInterface} from "types";
+import {BannerInterface, ContactResponseInterface, LanguageEnum, ProjectResponseInterface} from "types";
 import {CvDataAction} from "../action-types/cvData";
 
 export interface CvDataState {
   projects: ProjectResponseInterface;
   contacts: ContactResponseInterface;
-  menu: MenuInterface[];
   banner: BannerInterface;
   techTitle: string;
   projectsY: number;
@@ -22,7 +21,6 @@ const initialState: CvDataState = {
     title: 'Contact',
     contacts: [],
   },
-  menu: [],
   banner: {
     id: 0,
     name:'',
@@ -46,11 +44,6 @@ interface SetProjects {
 interface SetContacts {
   type: CvDataAction.SET_CONTACTS,
   payload: ContactResponseInterface,
-}
-
-interface SetMenu {
-  type: CvDataAction.SET_MENU,
-  payload:MenuInterface[],
 }
 
 interface SetBanner {
@@ -81,7 +74,7 @@ interface SetLanguage {
   payload: LanguageEnum,
 }
 
-type Action = SetProjects | SetContacts | SetProjectsY | SetTechY | SetContactY | SetMenu | SetBanner | SetTechTitle | SetLanguage;
+type Action = SetProjects | SetContacts | SetProjectsY | SetTechY | SetContactY | SetBanner | SetTechTitle | SetLanguage;
 
 export default (state: CvDataState = initialState, action: Action) => {
   switch(action.type){
@@ -95,12 +88,6 @@ export default (state: CvDataState = initialState, action: Action) => {
       return {
         ...state,
         contacts: action.payload
-      }
-    }
-    case CvDataAction.SET_MENU: {
-      return {
-        ...state,
-        menu: action.payload
       }
     }
     case CvDataAction.SET_BANNER: {

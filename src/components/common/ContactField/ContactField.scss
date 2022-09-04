@@ -28,8 +28,12 @@
   }
 }
 
-.contact__details__panel:hover a, .contact__details__panel:hover button {
+.contact__details__panel:hover button {
   color: white;
+}
+
+.contact__details__panel button:hover {
+  color: orange;
 }
 
 @media(max-width: 651px){

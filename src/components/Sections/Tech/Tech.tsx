@@ -52,8 +52,6 @@ export const Tech = () => {
         if(firstRowY === 0 || window.scrollY < titleY - window.innerHeight + 100 || window.scrollY > thirdRowY - 100){
             return;
         }
-        console.log('execution')
-
 
         if(window.scrollY > titleY - window.innerHeight + 200){
             title.current.style.transform = 'translateY(0)'

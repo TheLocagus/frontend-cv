@@ -1,5 +1,5 @@
-import {BannerInterface, ContactInterface, ContactResponseInterface,
-  LanguageEnum, MenuInterface, ProjectInterface, ProjectResponseInterface } from "types";
+import {BannerInterface, ContactResponseInterface,
+  LanguageEnum, ProjectResponseInterface } from "types";
 import {CvDataAction} from "../action-types/cvData";
 
 export const setProjects = (projects: ProjectResponseInterface) => ({
@@ -10,11 +10,6 @@ export const setProjects = (projects: ProjectResponseInterface) => ({
 export const setContacts = (contacts: ContactResponseInterface) => ({
   type: CvDataAction.SET_CONTACTS,
   payload: contacts,
-})
-
-export const setMenu = (menu: MenuInterface[]) => ({
-  type: CvDataAction.SET_MENU,
-  payload: menu,
 })
 
 export const setBanner = (banner: BannerInterface) => ({
