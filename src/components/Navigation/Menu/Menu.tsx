@@ -6,6 +6,8 @@ import {redirectTo} from "../../../utils/redirectTo";
 import {MenuSwitchLanguageLi} from "../../common/MenuSwitchLanguageLi/MenuSwitchLanguageLi";
 import {toEngFetch, toPlFetch} from "../../../utils/urls";
 import './Menu.scss';
+import {AiOutlineLink} from "react-icons/ai";
+
 
 export const Menu = () => {
   const {projectsY, techY, contactY, language} = useSelector((store: RootState) => store.cvData)
@@ -36,6 +38,7 @@ export const Menu = () => {
           </div>
         </li>
         <li onClick={() => redirectTo('https://github.com/TheLocagus')} className="main-ul__github">
+          <AiOutlineLink className='link-icon'/>
           <div>Github</div>
         </li>
         {
