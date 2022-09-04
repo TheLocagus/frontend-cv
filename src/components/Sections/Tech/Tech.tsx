@@ -1,18 +1,33 @@
 import React, {useEffect, useRef, useState} from 'react';
 
 import './Tech.scss';
+import {useDispatch, useSelector} from "react-redux";
+import {setProjectsY, setTechY} from "../../../actions/cvData";
+import {RootState} from "../../../store";
 
 export const Tech = () => {
+    const {techTitle} = useSelector((store: RootState) => store.cvData)
+
+    const dispatch = useDispatch();
 
     const title = useRef() as React.MutableRefObject<HTMLInputElement>;
     const firstRow = useRef() as React.MutableRefObject<HTMLInputElement>;
     const secondRow = useRef() as React.MutableRefObject<HTMLInputElement>;
     const thirdRow = useRef() as React.MutableRefObject<HTMLInputElement>;
 
+    const techRef = useRef() as React.MutableRefObject<HTMLInputElement>;
+
+
+
     const [titleY, setTitleY] = useState(0);
     const [firstRowY, setFirstRowY] = useState(0);
     const [secondRowY, setSecondRowY] = useState(0);
     const [thirdRowY, setThirdRowY] = useState(0);
+
+    useEffect(()=> {
+        const techRefY = techRef.current.offsetTop;
+        dispatch(setTechY(techRefY));
+    }, [])
 
     useEffect(()=>{
         const titleY = title.current.offsetTop;
@@ -37,8 +52,6 @@ export const Tech = () => {
         if(firstRowY === 0 || window.scrollY < titleY - window.innerHeight + 100 || window.scrollY > thirdRowY - 100){
             return;
         }
-        console.log('execution')
-
 
         if(window.scrollY > titleY - window.innerHeight + 200){
             title.current.style.transform = 'translateY(0)'
@@ -69,9 +82,9 @@ export const Tech = () => {
 
 
     return (
-        <section className='section-tech'>
+        <section className='section-tech' ref={techRef}>
             <div className="tech-title" ref={title}>
-                <h2>Stack technologiczny</h2>
+                <h2>{techTitle}</h2>
             </div>
             <div className='frontend' ref={firstRow}>
                 <div className='tech'>

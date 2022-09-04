@@ -25,3 +25,22 @@
 
   }
 }
+
+@media (max-width: 651px){
+  .contact {
+    margin: 20px 0;
+    h2 {}
+
+    &__title {
+      font-size: 1.3rem;
+    }
+
+    &__details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 20px 0;
+    }
+  }
+
+}

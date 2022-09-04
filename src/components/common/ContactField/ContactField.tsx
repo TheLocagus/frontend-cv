@@ -4,6 +4,7 @@ import { DynamicButtonEnum } from 'types';
 import './ContactField.scss';
 import {toast, ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import {redirectTo} from "../../../utils/redirectTo";
 interface Props {
   imgName: string;
   type: DynamicButtonEnum;
@@ -29,9 +30,7 @@ export const ContactField = ({imgName, type, value, url}: Props) => {
     notify();
   }
 
-  const redirectTo = (value: string) => {
-    window.location.href = value;
-  }
+
 
   return (
     <div className="contact__details__panel">
@@ -41,20 +40,12 @@ export const ContactField = ({imgName, type, value, url}: Props) => {
       <div className='contact__details__panel__data'>
         {
           type === 'redirect'
-            ? <button onClick={() => redirectTo(url)}>{value}</button>
+            ? <>
+              <span className='orange'>{`>`}</span><button onClick={() => redirectTo(url)}>{value}</button>
+            </>
             : (<>
-              <button onClick={() => copyText(value)}>{value}</button>
-              <ToastContainer
-                position="top-right"
-                autoClose={3000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-              /></>)
+              <span className='orange'>{`>`}</span><button onClick={() => copyText(value)}>{value}</button>
+              </>)
         }
       </div>
     </div>

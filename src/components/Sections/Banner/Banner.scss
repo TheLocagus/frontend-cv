@@ -13,7 +13,7 @@
     padding: 20px 40px 20px 20px;
     color: $color-white;
     height: 100%;
-    background-color: rgba(30, 30, 80, 0.8);
+    background-color: rgba(30, 30, 80, 0.9);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -55,7 +55,7 @@
       white-space: pre-wrap;
       opacity: 0;
       animation: showing .9s linear 3s forwards;
-      line-height: 30px;
+      line-height: 40px;
       letter-spacing: 1px;
     }
   }
@@ -80,6 +80,48 @@
 @keyframes showing {
   from { opacity: 0 }
   to { opacity: 1 }
+}
+
+
+@media (max-width: 651px) {
+  .banner {
+    .content {
+      .first-part {
+        flex-basis: 15%;
+        font-size: 34px;
+      }
+      .second-part {
+        font-size: 28px;
+        text-align: center;
+      }
+
+      .third-part, .fourth-part {
+        font-size: 18px;
+        text-align: center;
+        margin: 10px 0;
+      }
+    }
+  }
+}
+
+@media (max-height: 401px) and (orientation: landscape){
+  .banner {
+    .content {
+      .first-part {
+        flex-basis: 15%;
+        font-size: 30px;
+      }
+      .second-part {
+        font-size: 24px;
+      }
+
+      .third-part, .fourth-part {
+        font-size: 16px;
+        text-align: right;
+        margin: 10px 0;
+      }
+    }
+  }
 }
 
 

@@ -3,7 +3,7 @@
   justify-content: center;
 
   h3 {
-    flex-basis: 15%;
+    flex-basis: 20%;
     letter-spacing: 1px;
   }
 
@@ -21,7 +21,7 @@
 
   &__urls {
     margin-left: 5px;
-    flex-basis: 15%;
+    flex-basis: 20%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -37,5 +37,95 @@
       font-size: 16px;
       text-transform: uppercase;
     }
+
+    a:hover {
+      color: orange
+    }
+  }
+
+}
+
+.orange {
+  color: orange;
+  padding-right: 5px;
+}
+
+
+@media (max-width: 651px){
+  .project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h3 {
+      text-align: center;
+      margin: 0 0 10px 0;
+      letter-spacing: 1px;
+    }
+
+    &__details {
+      font-size: 14px;
+      line-height: 30px;
+      margin: 0 30px;
+
+      &__tech {
+        margin-top: 20px;
+      }
+    }
+
+    &__urls {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+
+      a {
+        font-size: 12px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media (max-height: 401px) and (orientation: landscape){
+
+    .project {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h3 {
+        text-align: center;
+        margin: 20px 0;
+        letter-spacing: 1px;
+      }
+
+      &__details {
+        font-size: 14px;
+        line-height: 30px;
+        margin: 0 60px;
+
+        &__tech {
+          margin-top: 20px;
+        }
+      }
+
+      &__urls {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        a {
+          font-size: 12px;
+          text-align: center;
+        }
+      }
+    }
+}
+
+@media (max-width: 1600px){
+  h3 {
+    font-size: 25px;
   }
 }

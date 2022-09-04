@@ -63,3 +63,39 @@
 .tech-icon:hover {
   transform: scale(1.5) rotate(360deg)
 }
+
+@media (max-width: 651px) {
+  .section-tech {
+    height: 80vh;
+    .tech-title {
+      font-size: 1.2rem;
+      h2 {}
+    }
+    .frontend, .backend, .other {
+      justify-content: space-around;
+    }
+  }
+  .tech-icon {
+    height: 60px;
+  }
+}
+
+@media (max-height: 401px) and (orientation: landscape){
+  .section-tech {
+    height: 100vh;
+    .tech-title {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      h2 {}
+    }
+    .frontend, .backend, .other {
+      //justify-content: space-around;
+      .tech {
+        flex-basis: 18%;
+      }
+    }
+  }
+  .tech-icon {
+    height: 70px;
+  }
+}

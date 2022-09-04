@@ -2,7 +2,6 @@
 
 .contact__details__panel {
   flex-basis: 15%;
-  cursor: pointer;
   &__icon {
     text-align: center;
     img {
@@ -12,8 +11,7 @@
   &__data {
     text-align: center;
     margin: 10px 0 0 0;
-
-
+    cursor: pointer;
   }
   a {
     color: $color-cool-gray;
@@ -30,6 +28,45 @@
   }
 }
 
-.contact__details__panel:hover a, .contact__details__panel:hover button {
+.contact__details__panel:hover button {
   color: white;
+}
+
+.contact__details__panel button:hover {
+  color: orange;
+}
+
+@media(max-width: 651px){
+  .contact__details__panel {
+    margin-top: 20px;
+    &__icon {
+      img {
+        height: 80px;
+      }
+    }
+    &__data {
+      text-align: center;
+      margin: 0;
+    }
+    a {}
+    button {}
+  }
+}
+
+@media(max-height: 401px) and (orientation: landscape){
+  .contact__details__panel {
+    flex-basis: 23%;
+    margin-top: 20px;
+    &__icon {
+      img {
+        height: 80px;
+      }
+    }
+    &__data {
+      text-align: center;
+      margin: 0;
+    }
+    a {}
+    button {}
+  }
 }

@@ -10,7 +10,7 @@ import {setProjectsY} from "../../../actions/cvData";
 export const Projects = () => {
 
   const {projects} = useSelector((store: RootState) => store.cvData);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const projectsRef = useRef() as React.MutableRefObject<HTMLInputElement>;
 
   useEffect(()=> {
@@ -18,7 +18,7 @@ export const Projects = () => {
     dispatch(setProjectsY(projectsRefY));
   }, [])
 
-  const generateProjectsView = () => projects
+  const generateProjectsView = () => projects.projects
     .map((project, i, array) => {
       const {id} = project;
       if (array.length - 1 === i) {
@@ -50,7 +50,7 @@ export const Projects = () => {
   return (
     <>
       <section className="section-projects" ref={projectsRef}>
-        <div className="projects-title"><h2>Moje projekty</h2></div>
+        <div className="projects-title"><h2>{projects.title}</h2></div>
         {generateProjectsView()}
       </section>
     </>
