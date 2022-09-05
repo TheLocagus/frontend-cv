@@ -5,6 +5,7 @@ import {setBanner, setContacts, setProjects, setTechTitle} from "../../../action
 import {LoadingView} from "../../../views/LoadingView/LoadingView";
 import {Sections} from "../../Sections/Sections";
 import {DataResponseType} from 'types';
+import {frontUrl} from "../../../utils/urls";
 
 
 export const MainPage = () => {
@@ -16,11 +17,9 @@ export const MainPage = () => {
       const getValues = () => {
         return (async () => {
           if (language !== undefined){
-            // return await fetch('https://bkolsutjs-cv.networkmanager.pl/api/lan/${language}');
-            return await fetch(`http://localhost:3001/api/lan/${language}`);
+            return await fetch(`${frontUrl}/api/lan/${language}`);
           } else {
-            return await fetch(`http://localhost:3001/api/lan/eng`);
-            // return await fetch(`http://bkolsutjs-cv.networkmanager.pl/api/`);
+            return await fetch(`${frontUrl}/api/`);
           }
         })
       }
@@ -35,8 +34,8 @@ export const MainPage = () => {
         dispatch(setBanner(banner.banner))
         dispatch(setTechTitle(techTitle))
       } else {
-        window.location.href = 'http://localhost:3000/error'
-        // window.location.href = 'https://bkolsutjs-cv.networkmanager.pl/error'
+        // window.location.href = 'http://localhost:3000/error'
+        window.location.href = `${frontUrl}/error`
       }
     })()
   }, [])
