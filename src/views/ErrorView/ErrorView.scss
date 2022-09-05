@@ -1,7 +1,7 @@
 @import "../../variables";
 
 .error-view {
-  height: calc(100vh - #{$height-nav} - #{$height-footer});
+  height: calc(100vh - #{$height-nav-not-mobile} - #{$height-footer});
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -10,5 +10,13 @@
 
   h1, h2 {
     flex-basis: 15%;
+  }
+}
+
+@media (max-width: 651px){
+  .error-view {
+    height: calc(100vh - #{$height-nav} - #{$height-footer});
+    display: flex;
+    text-align: center;
   }
 }

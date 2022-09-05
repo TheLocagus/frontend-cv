@@ -1,5 +1,7 @@
 @import "../../../variables";
-
+.mobile-menu-bar {
+  display: none;
+}
 .main-ul {
   height: 100%;
   display: flex;
@@ -46,5 +48,47 @@ header nav {
 
 .link-icon {
   margin-right: 5px;
+}
+
+
+@media (max-width: 651px) {
+
+  .mobile-menu-bar {
+    display: block;
+    margin-right: 20px;
+    height: 100%;
+    font-size: 20px;
+  }
+
+  header {
+    position: relative;
+  }
+  header nav {
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    height: calc(100vh - #{$height-nav});
+    width: 100%;
+    z-index: 1;
+    background-color: black;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: .2s;
+
+    ul li {
+      flex-basis: 10%;
+    }
+  }
+  .main-ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+
+.show-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
 }
 

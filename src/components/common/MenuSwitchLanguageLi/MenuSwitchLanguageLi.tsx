@@ -4,12 +4,15 @@ import {AiOutlineLink} from "react-icons/ai";
 
 interface Props {
   languageUrl: string;
-  title: string
+  title: string;
+  isMenuOpen: boolean;
+  setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
-export const MenuSwitchLanguageLi = ({languageUrl, title}: Props) => {
+export const MenuSwitchLanguageLi = ({languageUrl, title, isMenuOpen, setIsMenuOpen}: Props) => {
+
 
   return (
-    <li onClick={() => redirectTo(languageUrl)} className="main-ul__language">
+    <li onClick={() => redirectTo(languageUrl, isMenuOpen, setIsMenuOpen)} className="main-ul__language">
       <div>
         <AiOutlineLink className='link-icon'/>
         {title}

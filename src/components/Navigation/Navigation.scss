@@ -1,17 +1,19 @@
 @import "../../variables";
 
 header {
-  height: $height-nav;
+  height: $height-nav-not-mobile;
   width: 100%;
   background-color: $color-cool-darkblue;
   display: flex;
   color: $color-white;
 
+
   div.logo {
     flex-grow: 1;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    margin-left: 20px;
 
   p {
     margin: 0;
@@ -21,12 +23,14 @@ header {
 
 @media (max-width: 651px) {
   header {
-    display: none;
+    z-index: 99999999999999999999999999999999;
+    position: fixed;
   }
 }
 
 @media (max-height: 401px) and (orientation: landscape){
   header {
-    display: none;
+    z-index: 99999999999999999999999999999999;
+    position: fixed;
   }
 }

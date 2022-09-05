@@ -5,7 +5,7 @@ import {setBanner, setContacts, setProjects, setTechTitle} from "../../../action
 import {LoadingView} from "../../../views/LoadingView/LoadingView";
 import {Sections} from "../../Sections/Sections";
 import {DataResponseType} from 'types';
-import {frontUrl} from "../../../utils/urls";
+import {apiUrl, frontUrl} from "../../../utils/urls";
 
 
 export const MainPage = () => {
@@ -17,9 +17,9 @@ export const MainPage = () => {
       const getValues = () => {
         return (async () => {
           if (language !== undefined){
-            return await fetch(`${frontUrl}/api/lan/${language}`);
+            return await fetch(`${apiUrl}/lan/${language}`);
           } else {
-            return await fetch(`${frontUrl}/api/`);
+            return await fetch(`${apiUrl}`);
           }
         })
       }

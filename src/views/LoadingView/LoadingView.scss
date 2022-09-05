@@ -1,7 +1,7 @@
 @import "../../variables";
 
 .loading-view {
-  height: calc(100vh - #{$height-nav} - #{$height-footer});
+  height: calc(100vh - #{$height-nav-not-mobile} - #{$height-footer});
   overflow: hidden;
   display: flex;
   flex-direction: column;

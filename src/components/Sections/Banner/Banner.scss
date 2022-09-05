@@ -1,6 +1,6 @@
 @import "../../../variables";
 .section-about-me {
-  height: $height-section;
+  height: calc(100vh - #{$height-nav-not-mobile});
   //background-color: #123;
   position: relative;
 }
@@ -85,7 +85,11 @@
 
 @media (max-width: 651px) {
   .banner {
+    height: calc(100vh - #{$height-nav});
     .content {
+      display: flex;
+      align-items: center;
+      padding: 20px;
       .first-part {
         flex-basis: 15%;
         font-size: 34px;
@@ -99,6 +103,7 @@
         font-size: 18px;
         text-align: center;
         margin: 10px 0;
+        line-height: 36px;
       }
     }
   }
