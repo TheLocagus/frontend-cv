@@ -15,7 +15,6 @@ export const MainPage = () => {
   useEffect(() => {
     (async () => {
       if (language !== undefined && language !== null) {
-        console.log(language)
         const res = await fetch(`${apiUrl}/lan/${language}`);
 
         const data: DataResponseType = await res.json()
