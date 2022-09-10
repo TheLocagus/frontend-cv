@@ -4,7 +4,7 @@ export const redirectTo = (value: string, isMenuOpen?: boolean, setIsMenuOpen?: 
   if(isMenuOpen && setIsMenuOpen !== undefined){
     setIsMenuOpen(false)
   }
-  document.body.style.overflow = 'scroll'
+  document.body.style.overflow = 'auto'
   window.open(
     `${value}`,
     '_blank'

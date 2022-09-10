@@ -14,31 +14,24 @@ export const MainPage = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     (async () => {
-      const getValues = () => {
-        return (async () => {
-          if (language !== undefined){
-            return await fetch(`${apiUrl}/lan/${language}`);
-          } else {
-            return await fetch(`${apiUrl}`);
-          }
-        })
-      }
+      if (language !== undefined && language !== null) {
+        console.log(language)
+        const res = await fetch(`${apiUrl}/lan/${language}`);
 
-      const getData = getValues();
-      const data: DataResponseType = await (await getData()).json()
+        const data: DataResponseType = await res.json()
 
-      if (data.success) {
-        const {projects, contacts, banner, techTitle} = data;
-        dispatch(setProjects(projects))
-        dispatch(setContacts(contacts))
-        dispatch(setBanner(banner.banner))
-        dispatch(setTechTitle(techTitle))
-      } else {
-        // window.location.href = 'http://localhost:3000/error'
-        window.location.href = `${frontUrl}/error`
+        if (data.success) {
+          const {projects, contacts, banner, techTitle} = data;
+          dispatch(setProjects(projects))
+          dispatch(setContacts(contacts))
+          dispatch(setBanner(banner.banner))
+          dispatch(setTechTitle(techTitle))
+        } else {
+          window.location.href = `${frontUrl}/error`
+        }
       }
     })()
-  }, [])
+  }, [language])
 
   if (
     projects.projects.length === 0

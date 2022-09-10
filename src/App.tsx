@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {Route, Routes} from "react-router-dom";
 import './App.scss';
 import {Navigation} from "./components/Navigation/Navigation";
@@ -7,7 +7,6 @@ import {MainPageView} from "./views/MainPageView";
 import {ErrorView} from "./views/ErrorView/ErrorView";
 
 export const App = () => {
-
   const appRef = useRef() as React.MutableRefObject<HTMLInputElement>;
 
   const showY = (e: any) => {
@@ -16,13 +15,14 @@ export const App = () => {
     // console.log("Wysokość ekranu", window.innerHeight)
     // console.log("Góra ekranu ", window.scrollY)
   }
+
   return (
     <div className="App" ref={appRef} onClick={showY}>
       <Navigation/>
       <Routes>
         <Route path='/' element={<MainPageView/>}/>
         <Route path='/:lan' element={<MainPageView/>}/>
-        <Route path='/error' element={<ErrorView/>}/>
+        <Route path='/:lan/error' element={<ErrorView/>}/>
       </Routes>
       <Footer/>
     </div>

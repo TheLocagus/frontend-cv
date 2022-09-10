@@ -20,7 +20,7 @@ export const Menu = () => {
 
     if (!isMenuOpen) {
       navRef.current.className = navRef.current.className.replace(" show-menu", "");
-      document.body.style.overflow = 'scroll'
+      document.body.style.overflow = 'auto'
     } else {
       navRef.current.className += ' show-menu';
       document.body.style.overflow = 'hidden'
@@ -32,7 +32,7 @@ export const Menu = () => {
     if (isMenuOpen) {
       setIsMenuOpen(false)
     }
-    document.body.style.overflow = 'scroll';
+    document.body.style.overflow = 'auto';
     window.scrollTo({
       top: elementY,
       left: 0,

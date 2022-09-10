@@ -9,7 +9,7 @@ export interface CvDataState {
   projectsY: number;
   techY: number;
   contactY: number;
-  language: LanguageEnum;
+  language: LanguageEnum | null;
 }
 
 const initialState: CvDataState = {
@@ -27,13 +27,13 @@ const initialState: CvDataState = {
     firstParagraph:'',
     secondParagraph: '',
     title: '',
-    language: LanguageEnum.polish,
+    language: null,
   },
   techTitle: '',
   projectsY: 0,
   techY: 0,
   contactY: 0,
-  language: LanguageEnum.polish
+  language: null
 }
 
 interface SetProjects {
